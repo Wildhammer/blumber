@@ -56,9 +56,9 @@ app.filter('reverse', function() {
 
   4. Since this project uses SCP to send/receive files, you must have your DSA key in order to make a connection to the server.  
   5. Finally you must have your SSH credential in a JSON file named auth.json which is in the same directory as main.py file. The contents of auth.json must look like this:  
-    ```		
-{"username":"your_username","password":"your_password","hostname":"your_hostname","port":"port_number","key_path":"path_to_DSA_key"}  
-    ```
+    		
+    {"username":"your_username","password":"your_password","hostname":"your_hostname","port":"port_number","key_path":"path_to_DSA_key"}  
+    
   6. There's not any step 6, done. It's as simple as it sounds!  
   
 Writing a post
