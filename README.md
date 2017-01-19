@@ -11,13 +11,13 @@ Installation
 
 Follow these steps to add Blumber to your page:  
 	1. First include jQuery and AngularJS in the header of your html document:  
-	```HTML  
+	```  
 		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
 	```  
 	   Notice that these are the most recent versions at the time I wrote this README file. You may want to use later versions by the time you use this project (Assuming they are backward compatible!).  
 	2. Next, place the following HTML code into your html document:  
-	```HTML  
+	```  
 		<div ng-show="items.length">  
 			<h4><small>RECENT POSTS</small></h4>    
 			<div ng-repeat="item in items | reverse">  
@@ -27,7 +27,7 @@ Follow these steps to add Blumber to your page:
 	```  
 	   I didn't include my styles for this element because you may want to have it styled in a way that fits your website's design and that can be done simply by adding some CSS.  
 	3. Copy and paste the following script somewhere in your HTML document or wherever you're having your scripts on.  
-	```javascript  
+	```  
 		<script>  
 		var app = angular.module("myApp", []);  
 		app.controller("myCtrl", function($scope,$http) {  
@@ -80,5 +80,5 @@ Documentation
   
 I tried to put a reasonable amount of comments when I wrote this so if in any case you wanted to change anything take a quick look at my comments then you should be able to figure out what's going on and what I have done (It's not rocket science, it's ridiculously simple!).  
   
-    
+
 [1]: https://www.cs.colostate.edu/helpdocs/vi.html
