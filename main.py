@@ -11,11 +11,7 @@ import os
 import subprocess
 
 
-if len(sys.argv) < 2 :
-	print "ssh credentials are needed"
-	sys.exit()
-
-with open(sys.argv[1]) as data_file:    
+with open('auth.json') as data_file:    
     credentials = json.load(data_file)    
 
 #getting the ssh login credentials from the file
