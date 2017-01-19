@@ -27,6 +27,7 @@ Follow these steps to add Blumber to your page:
 	```  
 	   I didn't include my styles for this element because you may want to have it styled in a way that fits your website's design and that can be done simply by adding some CSS.  
 	3. Copy and paste the following script somewhere in your HTML document or wherever you're having your scripts on.  
+
 	```  
 		<script>  
 		var app = angular.module("myApp", []);  
@@ -46,7 +47,6 @@ Follow these steps to add Blumber to your page:
 		});  
 		</script>     
 	```  
-  
 	4. Since this project uses SCP to send/receive files, you must have your DSA key in order to make a connection to the server.  
 	5. Finally you must have your SSH credential in a JSON file named auth.json which is in the same directory as main.py file. The contents of auth.json must look like this:  
 		{"username":"your_username","password":"your_password","hostname":"your_hostname","port":"port_number","key_path":"path_to_DSA_key"}  
