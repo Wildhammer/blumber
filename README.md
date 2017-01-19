@@ -60,6 +60,8 @@ app.filter('reverse', function() {
     {"username":"your_username","password":"your_password","hostname":"your_hostname","port":"port_number","key_path":"path_to_DSA_key"}  
     
   6. There's not any step 6, done. It's as simple as it sounds!  
+
+[Check out my website to see how it looks like!][2]
   
 Writing a post
 --------------
@@ -91,3 +93,4 @@ I tried to put a reasonable amount of comments when I wrote this so if in any ca
   
 
 [1]: https://www.cs.colostate.edu/helpdocs/vi.html
+[2]: http://www.behbooei.com
