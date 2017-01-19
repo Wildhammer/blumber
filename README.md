@@ -16,7 +16,7 @@ Follow these steps to add Blumber to your page:
 ```  
 		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>  
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
-```  
+
 
 
 	   Notice that these are the most recent versions at the time I wrote this README file. You may want to use later versions by the time you use this project (Assuming they are backward compatible!).  
@@ -31,7 +31,7 @@ Follow these steps to add Blumber to your page:
 				<ng-include src="item"></ng-include>  
 			</div>  
 		</div>  
-```  
+
 
 
 	   I didn't include my styles for this element because you may want to have it styled in a way that fits your website's design and that can be done simply by adding some CSS.  
@@ -56,7 +56,6 @@ Follow these steps to add Blumber to your page:
 		  };  
 		});  
 		</script>     
-```
 
 	4. Since this project uses SCP to send/receive files, you must have your DSA key in order to make a connection to the server.  
 	5. Finally you must have your SSH credential in a JSON file named auth.json which is in the same directory as main.py file. The contents of auth.json must look like this:  
