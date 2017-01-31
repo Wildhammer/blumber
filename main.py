@@ -1,6 +1,6 @@
 #paramiko must be installed beforehand
 import paramiko
-from scp import SCPClient
+from scp import SCPClient 
 import json
 from pprint import pprint
 import sys
@@ -31,20 +31,20 @@ ssh.connect(hostname = hst, username = uname,  pkey = k, port=prt)
 scp = SCPClient(ssh.get_transport())
 
 try:#Get the list of current posts on the server
-	scp.get('public_html/posts.json','./') 
+	scp.get('public_html/posts.php','./') 
 except:#If the file doesn't exist on server then make one
-	with open('posts.json','w') as data_file:
-		json.dump([], data_file)
+	with open('posts.php','w') as data_file:
+		json.dump({"records":[]}, data_file)
 		data_file.close()
 		scp = SCPClient(ssh.get_transport())
 	pass
 
 
 #Updating the posts.json file on the server
-with open('posts.json','r+') as data_file:
+with open('posts.php','r+') as data_file:
     data = json.load(data_file)
-    next_post_num = str(len(data)+1)
-    data.append('post'+next_post_num+'.htm')
+    next_post_num = str(len(data["records"])+1)
+    data["records"].append('post'+next_post_num+'.htm')
     data_file.seek(0)
     json.dump(data, data_file)
     data_file.close()
@@ -94,10 +94,13 @@ file.write("</p>")
 file.close()
 
 #Update the json file on the server
-scp.put('posts.json', 'public_html/')
-os.remove("posts.json")
+scp.put('posts.php', 'public_html/')
+os.remove("posts.php")
 
 #New post is sent to the server
 scp.put('post'+next_post_num+'.htm','public_html/')
+os.remove("post"+next_post_num+".htm")
 
 scp.close()
+
+print "Your recent post with \"%s\" title has posted on your website successfully!" % title

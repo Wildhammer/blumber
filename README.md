@@ -21,12 +21,12 @@ Follow these steps to add Blumber to your page:
 	
   2. Next, place the following HTML code into your html document:  
   	
-    ```  
-<div ng-show="items.length">  
-	<h4><small>RECENT POSTS</small></h4>    
-	<div ng-repeat="item in items | reverse">  
-		<ng-include src="item"></ng-include>  
-	</div>  
+    ```
+<div ng-app="myApp" ng-controller="myCtrl" ng-show="items.length" id="blog" class="well pre-scrollable">
+	<h4><small>RECENT POSTS</small></h4>  
+	<div ng-repeat="item in items | reverse">
+		<ng-include src="item"></ng-include>
+	</div>
 </div>  
     ```
 
@@ -35,23 +35,22 @@ Follow these steps to add Blumber to your page:
   3. Copy and paste the following script somewhere in your HTML document or wherever you're having your scripts on.  
 
     ```
-<script>  
-var app = angular.module("myApp", []);  
-app.controller("myCtrl", function($scope,$http) {  
-  $http.get('posts.json')  
-            .success(function(data) {   
-            	  $scope.items = data; 
-            })  
-            .error(function() {  
-                defer.reject('could not find posts.json');  
-            });  
-});  
-app.filter('reverse', function() {  
-  return function(items) {  
-    return items.slice().reverse();  
-  };  
-});  
-</script>     
+<script>
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    $http.get("posts.php").then(function(response) {
+        $scope.items = response.data.records;
+    });
+});
+
+app.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});
+
+</script>
     ```
 
   4. Since this project uses SCP to send/receive files, you must have your DSA key in order to make a connection to the server.  
