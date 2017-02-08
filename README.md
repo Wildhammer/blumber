@@ -89,12 +89,15 @@ just fill the title, tags, and body parts following the given instructions and t
 Editing a post
 --------------
 If you want to edit an old post all you need to know is the number of the post on your website (the earliest post is number 1 and the numbers count up). Once figured what the post number is, run the following command:
+
 	python main.py -e *post_number* 
+
 vi editor will be invoked containing the old contents of the post with the same look as writing a new post.
 
 Removing a post
 ---------------
 If you want to remove an old post all you need to know is the number of the post on your website (the earliest post is number 1 and the numbers count up). Once figured what the post number is, run the following command:
+
         python main.py -r *post_number*
 
 Documentation
