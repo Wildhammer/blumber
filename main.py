@@ -27,6 +27,9 @@ if len(sys.argv) > 1:
 		if len(sys.argv) < 3:
 			print "The post number must be given\nTry -h option for help"
 			sys.exit()
+		permission = raw_input("\nAre you sure you want to delete post number "+str(sys.argv[2])+"?(y/n)")
+		if permission is 'n':
+			sys.exit()
 	elif sys.argv[1] == '-e':
 		cmd = mode.EDIT
 		if len(sys.argv) < 3:
@@ -42,7 +45,15 @@ if len(sys.argv) > 1:
 		sys.exit()
 
 
-with open('auth.json') as data_file:    
+#I personally use alias for pythong main.py command but don't worry about if you don't have it
+try:
+	os.chdir(os.path.expanduser(os.environ['BLUMBER']))
+except:
+	pass
+
+
+
+with open('auth.json') as data_file:
     credentials = json.load(data_file)
 
 #getting the ssh login credentials from the file
@@ -78,7 +89,7 @@ with open('posts.php','r+') as data_file:
     data = json.load(data_file)
     if cmd == mode.REMOVE:
     	#First delete the old post file if it exists, otherwise return error
-    	if not len(data['records']) > sys.argv[2]:
+    	if not len(data['records']) > int(sys.argv[2])-1:
     		print "ERROR: \n\tThere are only %s post(s) available, try to find the post number again" % str(len(data['records']))
     		os.remove("posts.php")
     		sys.exit()

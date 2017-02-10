@@ -98,7 +98,7 @@ Removing a post
 ---------------
 If you want to remove an old post all you need to know is the number of the post on your website (the earliest post is number 1 and the numbers count up). Once figured what the post number is, run the following command:
 
-        python main.py -r __post_number
+	python main.py -r __post_number  
 
 Documentation
 -------------
