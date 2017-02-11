@@ -170,7 +170,7 @@ if cmd == mode.WRITE or cmd == mode.EDIT:
 
 	#retrieving information from the temp file
 	title = str(content[(content.find("TITLE--------------\n")+20):(content.find("\n-------------TAGS")-len(content))])
-	array = filter(None,content[(content.find("TAGS---------------\n")+20):(content.find("\n-------------BODY")-len(content))].replace("\n"," ").replace(","," ").split(" "))
+	array = filter(None,content[(content.find("TAGS---------------\n")+20):(content.find("\n-------------BODY")-len(content))].replace("\n"," ").split(","))
 	body = str(content[(content.find("BODY---------------\n")+20):])
 	f.close()
 
