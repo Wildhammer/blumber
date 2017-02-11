@@ -1,4 +1,4 @@
-![alt tag](https://github.com/Wildhammer/blumber/icon.png)
+![alt tag](https://github.com/Wildhammer/blumber/blob/master/icon.png)
 
 README
 ======
