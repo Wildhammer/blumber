@@ -1,4 +1,4 @@
-![alt tag](https://)
+![alt tag](https://github.com/Wildhammer/blumber/icon.png)
 
 README
 ======
